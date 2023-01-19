@@ -15,6 +15,8 @@ header{
     grid-template-columns: 0fr 0.5fr 1fr;
     background-color: black;
     color: white;
+    position: fixed;
+    width: 100%;
 }
 
 nav{
@@ -79,14 +81,79 @@ aside{
 }
 .adicional{
     background: linear-gradient(220.55deg, #FF5E98 0%, #0F213E 100%);;
+    display: grid;
+    padding: 15px;
+}
+
+.pieles{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding-top: 15px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pieles img{
+    height: 300px;
+    width: 100%;
 }
 
 footer{
-    padding: 50px;
+    padding: 15px;
     background-color: black;
     color: white;
-    height: 100%;
+    height: 100px;
 }
+
+.redes-sociales ul{
+    display: flex;
+}
+
+.redes-sociales ul li{
+    list-style: none;
+    margin: 0 5px;
+}
+
+.redes-sociales ul li .fab{
+    font-size: 20px;
+    transition: .3s;
+    color: #000;
+}
+
+.redes-sociales ul li .fab:hover{
+    color:#fff;
+}
+
+.redes-sociales ul li a{
+    position:relative;
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: rgb(245, 243, 243);
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: .6s;
+}
+
+.redes-sociales ul li a:hover{
+    transform: translate(0,-10%);
+}
+
+.redes-sociales ul li:nth-child(1) a:hover{
+    background-color: rgb(44, 117, 221);
+}
+.redes-sociales ul li:nth-child(2) a:hover{
+    background: linear-gradient(220.55deg, #DD7BFF 0%, #FF6C6C 100%);
+}
+.redes-sociales ul li:nth-child(3) a:hover{
+    background-color: rgb(18, 140, 102);
+}
+.redes-sociales ul li:nth-child(4) a:hover{
+    background-color: rgb(0,0,0);
+}
+
 
 @media screen and (max-width: 800px) {
 
