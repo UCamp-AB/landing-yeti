@@ -49,13 +49,11 @@ nav a:hover{
 
 .jumbotron{
     display: grid;
-    grid-template-columns: 1.5fr 0.4fr;
-    height: 300px;
-    gap: 15px;
+    grid-template-columns: 1fr 1fr;
     background: linear-gradient(220.55deg, #565656 0%, #181818 100%);
     color: white;
-    /* border: red 5px solid; */
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0,0.6); */
+    box-shadow: 0px -8px -4px 0px rgba(77, 106, 208,-1);
+    width: 100%;
 }
 
 #content{
@@ -64,20 +62,112 @@ nav a:hover{
     flex-direction: column;
     padding-left: 15px;
     padding-top: 20px;
+    padding-right: 30px;
+    padding-bottom: 20px;
+    justify-content: center;
+    gap: 20px;
 }
 
-aside .principal{
-    width:250px
+#content h1{
+    font-size: 45px;
+    text-align: center;
+}
+
+#content p{
+    text-align: justify;
+    font-size: 18px;
+}
+
+#content .producto{
+    font-size: 30px;
+    text-align: center;
+}
+
+#content h3{
+    font-size:18px;
+    margin: 15px 0;
+    text-align: justify;
+}
+
+.input-grupo{
+    display: flex;
+    position: relative;
+    padding-top: 15px;
+    gap:15px;
+}
+
+.input{
+    padding: 10px;
+    width: 100%;
+    /* max-width: max-content; */
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    background-color: transparent;
+    outline: 2px solid #fff;
+}
+
+.input-correo{
+    position: absolute;
+    font-style: italic;
+    top: -1;
+    left: 0;
+    transform: translate(10px,10px);
+    transition: transform .25s;
+}
+
+.input:focus+ .input-correo{
+    font-style: normal;
+    transform: translate(10px,-10px) scale(.8);
+    color: #fff;
+    padding-inline: 5px;
+    background-color: #242329;
+}
+
+.input-grupo button{
+    display: flex;
+    background-color: #4D6AD0;
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+}
+
+.principal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+}
+
+.principal img{
+    position: relative;
+}
+
+.contenedor-galeria{
+    background: linear-gradient(220.55deg, #FF9D7E 0%, #4D6AD0 100%);
+    padding: 15px;
+}
+
+.galeria{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 15px;
 }
 
 .card{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0,0.6);
     transition: 0.3s;
+    font-size: 20px;
 }
 
 .card img{
     border-radius: 25px 25px 0 0;
-    height: 450px;
+    height: 550px;
     width: 100%;
 }
 
@@ -85,16 +175,6 @@ aside .principal{
     padding: 2px 16px;
 }
 
-.contenedor-galeria{
-    background: linear-gradient(220.55deg, #FF9D7E 0%, #4D6AD0 100%);
-    padding: 15px;
-}
-.galeria{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    padding: 15px;
-}
 
 .text-justify{
     text-align: justify;
@@ -103,7 +183,8 @@ aside .principal{
     display: grid;
     padding: 15px;
     background: linear-gradient(-210.55deg, #4D6AD0 0%, #FF8570 100%);
-    box-shadow: 0px 8px 4px 0px rgba(0, 0, 0,1);
+    box-shadow: 0px 8px 4px 0px rgba(77, 106, 208,1);
+    font-size: 20px;
 }
 
 .pieles{
@@ -184,7 +265,6 @@ footer{
 @media screen and (max-width: 800px) {
 
     nav{
-
         justify-content: space-between;
         width: relative;
     }
@@ -193,7 +273,46 @@ footer{
         text-align: center;
         padding: 10px;
     }
+
+    .jumbotron{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .principal img{
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
+
+    .galeria{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .card img{
+        border-radius: 25px 25px 0 0;
+        height: 300px;
+        width: auto;
+    }
+
+    .pieles{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding-top: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pieles img{
+        height: 300px;
+        width: 100%;
+    }
 }
+
 
 @media screen and (max-width: 600px) {
     header{
@@ -225,5 +344,44 @@ footer{
         width: 100%;
         text-align: center;
         padding: 10px;
+    }
+
+    .jumbotron{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .principal img{
+        align-items: center;
+        justify-content: center;
+        height: 300px;
+    }
+
+    .galeria{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .card img{
+        border-radius: 25px 25px 0 0;
+        height: 400px;
+        width: auto;
+    }
+
+    .pieles{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        padding-top: 15px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pieles img{
+        height: auto;
+        width: 100%;
     }
 }
